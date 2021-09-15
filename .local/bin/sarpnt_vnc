@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "Starting VNC Server for SArpnt..."
+x0vncserver -display :0 -rfbport $SARPNT_PORT

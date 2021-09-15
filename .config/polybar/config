@@ -1,17 +1,5 @@
 ;==========================================================
 ;
-; THIS IS AN EXAMPLE CONFIGURATION FILE!
-; IT IS NOT SUPPOSED TO WORK OUT OF THE BOX SINCE IS CONTAINS
-; SETTINGS THAT ARE SPECIFIC TO THE MACHINE WHICH WAS USED
-; TO GENERATE IT.
-; Please refer to the web documentation hosted at:
-; https://github.com/polybar/polybar#configuration
-; and
-; https://github.com/polybar/polybar/wiki/Configuration
-; if you want to automatically generate one for you.
-;
-;==========================================================
-;
 ;
 ;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
 ;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
@@ -28,262 +16,115 @@
 ;
 ;==========================================================
 
-[colors]
-;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-text = #dfdfdf
-primary = #ffc107
-secondary = #e60053
-alert = #f44336
-
-[bar/tumble]
-;monitor = DP-2
-monitor = ${env:MONITOR:}
-width = 100%
-height = 27
-;fixed-center = false
-
-background = ${colors.background}
-foreground = ${colors.text}
-
-line-size = 3
-line-color = #ffc07
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-
-; ##Modules##
-; mpd - connection refused
-; powermenu - empty
-; date - shows the time
-; temperature - termperature of somthing
-; battery - no charge state
-; eth - shows blank
-; unsupported - wlan
-; memory - ram usage
-; xkeyboard - keyboard layout
-; pulseaudio - volume bar
-; alsa - volume bar
-; xbacklight - not supported
-; xwindow - window title
-; filesystem - /:33% (maybe its storage usage or something)
-; bspwm - no socket
-
-
-modules-left = xwindow
-modules-center = date
-;modules-right = powermenu
-
-tray-position = right
-tray-padding = 2
-tray-background = #111111
-
-[bar/example]
-;monitor = ${env:MONITOR:HDMI-2}
-width = 100%
-height = 27
-;offset-x = 1%
-;offset-y = 1%
-radius = 6.0
-fixed-center = false
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 3
-line-color = #f00
-
-border-size = 4
-border-color = #00000000
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-
-modules-left = bspwm i3
-modules-center = mpd
-modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-
-tray-position = right
-tray-padding = 2
-;tray-background = #0063ff
-
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
-
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
-[module/date]
-type = internal/date
-interval = 5
-
-date =
-date-alt = " %Y-%m-%d"
-
-time = %H:%M
-time-alt = %H:%M:%S
-
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.primary}
-
-label = %date% %time%
-
-
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = AC
-full-at = 98
-
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
-
-
-[module/powermenu]
-type = custom/menu
-
-expand-right = false
-format-spacing = 1
-
-label-open =  ${env:HOSTNAME}
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
 [settings]
-screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-;pseudo-transparency = false
 
-[global/wm]
-margin-top = 5
-margin-bottom = 5
+[symbols]
+internet = 
+bluetooth = 
 
-; vim:ft=dosini
+[exec]
+internet = kcmshell5 kcm_networkmanagement
+bluetooth = kcmshell5 bluetooth
+time = kcmshell5 clock
+
+[colors]
+good = #00ff00
+warn = #ffff00
+bad = #ff0000
+info = #0000ff
+crazy = #8800ff
+
+
+; Modules
+[module/time]
+type = internal/date
+interval = 1.0
+label = %time%
+time = %I:%M %p %Z
+
+[module/window]
+type = internal/xwindow
+format = <label>
+format-padding = 1
+label-empty = Welcome
+
+[module/network]
+type = internal/network
+interface = eth0
+;interface = wlan1
+;format-padding = 2
+ramp-signal-padding = 2
+format-disconnected-padding = 2
+label-connected-padding = 2
+
+click-left = ${exec.internet}
+
+format-connected = <ramp-signal><label-connected>
+label-connected-background = ${colors.info}
+ramp-signal-background = ${colors.warn}
+ramp-signal-0-background = ${colors.good}
+ramp-signal-0 = ${symbols.internet}
+ramp-signal-1 = 1
+ramp-signal-2 = 2
+ramp-signal-3 = 3
+ramp-signal-4 = 4
+ramp-signal-5 = 5
+
+format-disconnected = <label-disconnected> 
+label-disconnected = ${symbols.internet}
+format-disconnected-background = ${colors.bad}
+
+[module/bluetooth]
+interval = 1.0
+type = custom/script
+format-padding = 2
+exec-if = test -n "$(hcitool dev | grep "hci0")"
+;exec = hcitool dev | grep "hci0"
+;exec = bluetoothctl paired-devices
+exec = ~/.config/polybar/bluetooth.sh
+format = ${symbols.bluetooth}
+format-background = ${colors.good}
+click-left = ${exec.bluetooth}
+
+[module/bluetoothno]
+interval = 1.0
+type = custom/script
+format-padding = 2
+exec-if = test -z "$(hcitool dev | grep "hci0")"
+format = ${symbols.bluetooth}
+exec = echo "ok"
+format-background = ${colors.bad}
+click-left = ${exec.bluetooth}
+
+[module/systemname]
+type = custom/text
+content = ${env:HOSTNAME}
+content-background = ${colors.crazy}
+
+; Bar
+[bar/tumble]
+width = 100%
+height = 28
+monitor = DP-0
+cursor-click = pointer
+
+font-0 = Roboto:size=12;4
+font-1 = FontAwesome
+font-2 = Material Icons:size=15;6
+
+click-left = 
+click-right = 
+click-middle = 
+
+tray-position = right
+tray-detached = false
+tray-maxsize = 20
+tray-background = ${colors.crazy}
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 4
+tray-scale = 1.0
+
+modules-left = window
+modules-center = time
+modules-right = bluetooth bluetoothno network systemname

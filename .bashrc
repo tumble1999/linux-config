@@ -165,3 +165,4 @@ alias python=python3
 alias rm=rm -i
 alias mv=mv -i
 alias cp=cp -i
+alias ls=ls -al

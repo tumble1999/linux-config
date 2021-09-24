@@ -137,8 +137,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-export SARPNT_PORT=6980
+[ -f ~/.config/sarpnt_port ] && ~/.config/sarpnt_port
 export PATH=$PATH:~/.local/bin:~/Documents/dev/cpp/cc65/bin:~/.local/share/lutris/runners/retroarch
 
 export NVM_DIR="$HOME/.local/share/nvm"
@@ -151,7 +150,7 @@ export RVM_DIR="$HOME/.local/share/rvm"
 [[ -s "$RVM_DIR/scripts/rvm" ]] && source "$RVM_DIR/scripts/rvm"
 
 # added by travis gem
-[ ! -s /home/tumble/.travis/travis.sh ] || source /home/tumble/.travis/travis.sh
+[ ! -s ~/.travis/travis.sh ] || source ~/.travis/travis.sh
 
 
 #docker

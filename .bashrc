@@ -161,7 +161,7 @@ source /etc/profile.d/devkit-env.sh
 alias linux-config='/usr/bin/git --git-dir=/home/tumble/linux-config --work-tree=/home/tumble'
 alias cls=clear
 alias python=python3
-alias rm=rm -i
-alias mv=mv -i
-alias cp=cp -i
-alias ls=ls -al
+alias "rm=rm -i"
+alias "mv=mv -i"
+alias "cp=cp -i"
+alias "ls=ls -al"

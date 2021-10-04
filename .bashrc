@@ -62,7 +62,7 @@ DEB_CHROOT="${debian_chroot:+($debian_chroot)}"
 USER_PROMPT='\u@\h'
 USER_COLOR="\[\033[01;32m\]"
 
-#PART_PROMPT="(\$(df --output=source . | grep -v 'Filesystem')):" 
+#PART_PROMPT="(\$(df --output=source . | grep -v 'Filesystem')):"
 CD_PROMPT="\w"
 CD_COLOR="\[\033[01;34m\]"
 
@@ -104,7 +104,7 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    #alias grep='grep --color=auto'
+    alias grep='grep --color=auto'
     #alias fgrep='fgrep --color=auto'
     #alias egrep='egrep --color=auto'
 fi
@@ -165,3 +165,7 @@ alias "rm=rm -i"
 alias "mv=mv -i"
 alias "cp=cp -i"
 alias "ls=ls -al"
+
+
+export "EDITOR=codium --wait"
+export "VISUAL=codium --wait"

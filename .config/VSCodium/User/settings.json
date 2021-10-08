@@ -1,0 +1,36 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "window.titleBarStyle": "custom",
+    "debug.toolBarLocation": "docked",
+    "GitLive.Issue tracker integration": "Disabled",
+    "files.autoSave": "onFocusChange",
+    "javascript.format.semicolons": "insert",
+    "typescript.format.semicolons": "insert",
+    "editor.insertSpaces": false,
+    "diffEditor.codeLens": true,
+    "GitLive.Hide others changes in gutter": true,
+    "terminal.integrated.tabs.location": "left",
+    "debug.showSubSessionsInToolBar": true,
+    "debug.terminal.clearBeforeReusing": true,
+    "C_Cpp.vcFormat.space.afterCastCloseParenthesis": true,
+    "problems.showCurrentInStatus": true,
+    "gitlens.mode.statusBar.alignment": "left",
+    "files.defaultLanguage": "markdown",
+    "workbench.editorAssociations": {
+        "*.svg": "svgPreview.previewEditor",
+        "*.md": "vscode.markdown.preview.editor"
+    },
+    "redhat.telemetry.enabled": true,
+    "files.exclude": {
+        "**/.DS_Store": false,
+        "**/.git": false,
+        "**/.hg": false,
+        "**/.svn": false,
+        "**/CVS": false,
+        "**/Thumbs.db": false
+    },
+    "workbench.colorCustomizations": {
+    },
+    "workbench.colorTheme": "Tumble Yellow Dark",
+    "editor.formatOnSave": true,
+}

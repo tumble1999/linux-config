@@ -143,6 +143,8 @@ export PATH=$PATH:~/.local/bin:~/Documents/dev/cpp/cc65/bin:~/.local/share/lutri
 export NVM_DIR="$HOME/.local/share/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$(yarn global bin):$PATH"
+
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export RVM_DIR="$HOME/.local/share/rvm"
@@ -153,19 +155,22 @@ export RVM_DIR="$HOME/.local/share/rvm"
 [ ! -s ~/.travis/travis.sh ] || source ~/.travis/travis.sh
 
 
-#docker
+# docker
 export DOCKER_HOST=tcp://127.0.0.1:2375
+export "EDITOR=codium --wait"
+export "VISUAL=codium --wait"
 
-
+# DevKitPro
 source /etc/profile.d/devkit-env.sh
+
+# Alias
 alias linux-config='/usr/bin/git --git-dir=/home/tumble/linux-config --work-tree=/home/tumble'
-alias cls=clear
-alias python=python3
+alias "cls=clear"
+alias "python=python3"
 alias "rm=rm -i"
 alias "mv=mv -i"
 alias "cp=cp -i"
 alias "ls=ls -al"
+alias "edit=${EDITOR}"
 
 
-export "EDITOR=codium --wait"
-export "VISUAL=codium --wait"

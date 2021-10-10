@@ -18,7 +18,7 @@
     "files.defaultLanguage": "markdown",
     "workbench.editorAssociations": {
         "*.svg": "svgPreview.previewEditor",
-        "*.md": "vscode.markdown.preview.editor"
+        "*.md": "default"
     },
     "redhat.telemetry.enabled": true,
     "files.exclude": {
@@ -29,8 +29,10 @@
         "**/CVS": false,
         "**/Thumbs.db": false
     },
-    "workbench.colorCustomizations": {
-    },
+    "workbench.colorCustomizations": {},
     "workbench.colorTheme": "Tumble Yellow Dark",
     "editor.formatOnSave": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    }
 }

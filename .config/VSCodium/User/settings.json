@@ -31,8 +31,19 @@
     },
     "workbench.colorCustomizations": {},
     "workbench.colorTheme": "Tumble Yellow Dark",
-    "editor.formatOnSave": true,
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
     }
 }

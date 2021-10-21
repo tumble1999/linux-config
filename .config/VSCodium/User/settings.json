@@ -45,5 +45,9 @@
     },
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
-    }
+    },
+    "cSpell.showStatus": false,
+    "quokka.startViewStatusBar": false,
+    "cmake.statusbar.visibility": "icon",
+    "git-graph.showStatusBarItem": false
 }

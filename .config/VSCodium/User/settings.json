@@ -1,6 +1,5 @@
 {
     "workbench.iconTheme": "vscode-icons",
-    "window.titleBarStyle": "custom",
     "debug.toolBarLocation": "docked",
     "GitLive.Issue tracker integration": "Disabled",
     "files.autoSave": "onFocusChange",
@@ -49,5 +48,8 @@
     "cSpell.showStatus": false,
     "quokka.startViewStatusBar": false,
     "cmake.statusbar.visibility": "icon",
-    "git-graph.showStatusBarItem": false
+    "git-graph.showStatusBarItem": false,
+    "codeQL.telemetry.enableTelemetry": false,
+    "window.menuBarVisibility": "hidden",
+    "git.enableSmartCommit": true
 }

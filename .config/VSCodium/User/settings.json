@@ -50,6 +50,5 @@
     "cmake.statusbar.visibility": "icon",
     "git-graph.showStatusBarItem": false,
     "codeQL.telemetry.enableTelemetry": false,
-    "window.menuBarVisibility": "hidden",
-    "git.enableSmartCommit": true
+    "window.menuBarVisibility": "hidden"
 }

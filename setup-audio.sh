@@ -48,10 +48,10 @@ pactl set-default-sink ${S_MAIN}
 pactl set-default-source ${S_INPUT}.monitor
 
 # Route Audio
-#route_audio ${S_MAIN}.monitor ${SPEAKER}  # Route Audio: Main -> Speaker
-#route_audio ${S_COMMS}.monitor ${SPEAKER} # Route Audio: Communications -> Speaker
-route_audio ${S_MAIN}.monitor ${COMBINED}  # Route Audio: Main -> Combined
-route_audio ${S_COMMS}.monitor ${COMBINED} # Route Audio: Communications -> Combined
+route_audio ${S_MAIN}.monitor ${SPEAKER}  # Route Audio: Main -> Speaker
+route_audio ${S_COMMS}.monitor ${SPEAKER} # Route Audio: Communications -> Speaker
+#route_audio ${S_MAIN}.monitor ${COMBINED}  # Route Audio: Main -> Combined
+#route_audio ${S_COMMS}.monitor ${COMBINED} # Route Audio: Communications -> Combined
 route_audio ${S_COMMS}.monitor ${S_INPUT}  # Route Audio: Communications -> Input
 route_audio ${MIC} ${S_INPUT}              # Route audio: Microphone ->  Input
 #route_audio ${LINE_IN} ${S_INPUT}         # Route audio: Line-in ->  Input

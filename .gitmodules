@@ -1,3 +1,8 @@
 [submodule ".config/awesome"]
 	path = .config/awesome
-	url = https://github.com/tumble1999/material-awesome.git
+	url = git@github.com:tumble1999/awesome-config.git
+	branch = tumble
+[submodule ".config/VSCodium"]
+	path = .config/VSCodium
+	url = git@github.com:tumble1999/vscode-config.git
+	branch = master

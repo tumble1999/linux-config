@@ -11,7 +11,7 @@
 #alias la='ls -A'
 #alias l='ls -CF'
 
-alias linux-config='/usr/bin/git --git-dir=/home/tumble/linux-config --work-tree=/home/tumble'
+alias linux-config='/usr/bin/git --git-dir=${HOME}/linux-config --work-tree=${HOME}'
 alias "cls=clear"
 alias "python=python3"
 alias "rm=rm -i"

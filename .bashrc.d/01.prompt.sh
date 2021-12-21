@@ -36,7 +36,8 @@ USER_PROMPT='\u@\h'
 USER_COLOR="\[\033[01;32m\]"
 
 #PART_PROMPT="(\$(df --output=source . | grep -v 'Filesystem')):"
-CD_PROMPT="\w"
+#CD_PROMPT="\w"
+CD_PROMPT="\W"
 CD_COLOR="\[\033[01;34m\]"
 
 GIT_COLOR="\[\033[33m\]"

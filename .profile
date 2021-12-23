@@ -44,5 +44,3 @@ else
         . $XDG_RUNTIME_DIR/ssh-agent-env
     fi
 fi
-
-ssh-add .ssh/id_rsa 

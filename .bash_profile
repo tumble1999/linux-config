@@ -5,4 +5,4 @@
 export PATH="$HOME/.local/share/jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-export BEATSABER_DIR="${HOME}/games/steam/steamapps/common/Beat Saber"
+export BEATSABER_DIR="${HOME}/Games/steam/steamapps/common/Beat Saber"

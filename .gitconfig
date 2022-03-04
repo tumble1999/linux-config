@@ -4,5 +4,3 @@
 	signingkey = 9C12D974D47F6D6BEA40618A651CA998E1105BFA
 [commit]
 	gpgsign = true
-[credential]
-	helper = store

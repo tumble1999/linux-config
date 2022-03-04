@@ -44,3 +44,9 @@ else
         . $XDG_RUNTIME_DIR/ssh-agent-env
     fi
 fi
+
+# Vulkan
+
+#export AMD_VULKAN_ICD=RADV
+#export DISABLE_LAYER_AMD_SWITCHABLE_GRAPHICS_1=1
+#export VK_ICD_FILENAMES=

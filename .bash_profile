@@ -4,5 +4,4 @@
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export PATH="$HOME/.local/share/jenv/bin:$PATH"
 eval "$(jenv init -)"
-
-export BEATSABER_DIR="${HOME}/games/steam/steamapps/common/Beat Saber"
+export BEATSABER_DIR="/home/tumble/Games/Steam/steamapps/common/Beat Saber"

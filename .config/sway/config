@@ -302,7 +302,7 @@ for_window [class="^Spotify$"] move container to workspace $w5
 
 # capture
 assign [app_id="^com.obsproject.Studio$"] $w6
-assign [add_id="^org.freedesktop.ryuukyu.Helvum" ] $w6
+assign [app_id="^org.freedesktop.ryuukyu.Helvum" ] $w6
 assign [app_id="^org.pipewire.Helvum$"] $w6
 
 

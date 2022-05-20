@@ -274,11 +274,22 @@ workspace $w6 output DP-2
 #swaymsg -t get_tree|grep "class"
 #swaymsg -t get_tree|grep "app_id"
 
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+for_window [window_role="About"] floating enable
+for_window [class="Wine"] floating enable
+
 #dev
 assign [class="^VSCodium$"] $w1
 
 #gaming
 assign [class="^Steam$"] $w2
+for_window [class="^Steam$" title="^Friends List"] floating enable
+for_window [class="^Steam$" title="^Friends List"] resize set 678 636
 assign [app_id="^lutris$"] $w2
 
 #www
@@ -325,11 +336,13 @@ exec /usr/bin/lxpolkit
 
 # internet
 #exec nm-applet --indicator
+
 # notifications
 #exec killall dinst
 exec dunst
 #exec swaync
 #bindsym $super+Shift+n exec swaync-client -t -swr
+
 # audio
 #exec killall pipewire pipewire-pulse pipewire-media-session
 exec pipewire
@@ -348,13 +361,14 @@ exec /usr/lib/kdeconnectd
 exec sleep 5 && kdeconnect-indicator
 
 # Syncthing
-exec syncthing
+exec syncthing serve
 
 # Firewall
 exec sleep 5 &&  firewall-applet
 
 # Bluetooth
 exec blueman-applet
+exec joycond
 
 # Dock
 exec nwg-dock -x -nows -i 28 -f -a start
@@ -363,14 +377,13 @@ exec nwg-dock -x -nows -i 28 -f -a start
 exec udiskie --no-automount --smart-tray
 
 exec env KEYBASE_AUTOSTART=1 run_keybase
-#exec steam -silent
+exec pidof steam || steam -silent
 exec spotify --minimized
 exec discord
 exec schildichat-desktop
 exec gajim
 exec thunderbird60
 #exec codium
-#exec sshfs -o identityfile=$HOME/.config/kdeconnect/privateKey.pem,port=1740 kdeconnect@192.168.0.10:/var/phone
 exec keepassxc /home/tumble/Keepass/Database.kdbx
 exec helvum
 

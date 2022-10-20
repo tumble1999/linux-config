@@ -12,6 +12,7 @@ alias "ls=ls -al"
 alias shutdown='openrc-shutdown -p'
 alias reboot='openrc-shutdown -r'
 alias superkill="killall -s SIGKILL"
+alias ssh="TERM=xterm-256color ssh"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

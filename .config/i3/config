@@ -65,6 +65,7 @@ bindsym control+$alt+t exec alacritty
 set $menu "rofi -modi drun,run -show drun"
 bindsym $super+r exec $menu
 
+bindsym $super+l exec loginctl suspend
 
 # kill focused window
 bindsym $super+Shift+q kill
@@ -78,10 +79,10 @@ bindsym $super+Shift+q kill
 # bindcode $super+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $super+j focus left
+#bindsym $super+j focus left
 bindsym $super+k focus down
-bindsym $super+l focus up
-bindsym $super+semicolon focus right
+#bindsym $super+l focus up
+#bindsym $super+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $super+Left focus left
@@ -90,10 +91,10 @@ bindsym $super+Up focus up
 bindsym $super+Right focus right
 
 # move focused window
-bindsym $super+Shift+j move left
-bindsym $super+Shift+k move down
-bindsym $super+Shift+l move up
-bindsym $super+Shift+semicolon move right
+#bindsym $super+Shift+j move left
+#bindsym $super+Shift+k move down
+#bindsym $super+Shift+l move up
+#bindsym $super+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $super+Shift+Left move left
@@ -126,6 +127,9 @@ bindsym $super+a focus parent
 
 # focus the child container
 #bindsym $super+d focus child
+
+# screenshot
+bindsym $super+Shift+s exec xfce4-screenshooter -r
 
 #
 # Monitors:
@@ -166,8 +170,8 @@ workspace $w4 output $m1
 workspace $w5 output $m1
 workspace $w6 output $m1
 
-#swaymsg -t get_tree|grep "class"
-#swaymsg -t get_tree|grep "app_id"
+#i3-msg -t get_tree|grep "class"
+#i3-msg -t get_tree|grep "app_id"
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
@@ -185,9 +189,12 @@ assign [class="^VSCodium$"] $w1
 assign [class="^Steam$"] $w2
 for_window [class="^Steam$" title="^Friends List"] floating enable, resize set 678 636
 assign [con_id="^lutris$"] $w2
-set $game move container to workspace $w2, fullscreen enable
-for_window [class="^steam_app_\d+$" ] $game
-for_window [class="^hl2.*$"] $game
+#set $game move container to workspace $w2, fullscreen enable
+#for_window [class="^steam_app_\d+$" ] move container to workspace $w2
+#for_window [class="^steam_app_\d+$" ] fullscreen enable
+for_window [class="^hl2.*$"] move container to workspace $w2
+for_window [class="^hl2.*$"] fullscreen enable
+for_window [instance="origin.exe"] floating enable, move container to workspace $w2
 
 #www
 assign [class="^Brave-browser"] $w3
@@ -203,6 +210,8 @@ assign [class="^SchildiChat$"] $w4
 assign [class="^Thunderbird$"] $w4
 assign [class="^Pidgin$"] $w4
 assign [con_id="^org.gajim.Gajim$"] $w4
+assign [class="^Evolution$"] $w4
+assign [class="^Psi+$"] $w4
 
 #music
 assign [class="^Spotify$"] $w5
@@ -278,18 +287,24 @@ exec /usr/bin/lxpolkit
 exec dunst
 
 # audio
-exec pidof pipewire || pipewire
-exec pidof pipewire-pulse || pipewire-pulse
-exec pidof pipewire-media-session || pipewire-session
+exec_always pidof pipewire || pipewire
+exec_always pidof pipewire-pulse || pipewire-pulse
+exec_always pidof pipewire-media-session || pipewire-media-session
+exec_always pidof wireplumber || wireplumber
 
 # Cliboard
 #exec killall wl-paste
 #exec wl-paste -t text --watch clipman store --no-persist
 
+# SCreensaver
+exec xscreensaver --no-splash
 
 # KDE Connect
 exec /usr/lib/kdeconnectd
 exec sleep 5 && kdeconnect-indicator
+
+#Home assistant
+#exec hass
 
 # Syncthing
 exec syncthing serve
@@ -308,14 +323,16 @@ exec joycond
 exec udiskie --no-automount --smart-tray
 
 exec env KEYBASE_AUTOSTART=1 run_keybase
+exec keepassxc /home/tumble/Keepass/Database.kdbx
 exec pidof steam || steam -silent
 exec spotify --minimized
-exec discord
-exec schildichat-desktop
-exec gajim
-exec thunderbird60
+#exec discord
+#exec schildichat-desktop
+#exec gajim
+#exec psi-plus
+#exec thunderbird60
 #exec codium
-exec keepassxc /home/tumble/Keepass/Database.kdbx
+#exec evolution
 #exec helvum
 
 

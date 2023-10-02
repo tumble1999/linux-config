@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Alias definitions
-alias linux-config="/usr/bin/git --git-dir=${HOME}/linux-config --work-tree=${HOME}"
+alias linux-config="/usr/bin/git --git-dir=${HOME}/.local/dotfiles --work-tree=${HOME}"
 alias "cls=clear"
 alias "python=python3"
 alias "rm=rm -i"
@@ -12,7 +12,7 @@ alias "ls=ls -al"
 alias shutdown='openrc-shutdown -p'
 alias reboot='openrc-shutdown -r'
 alias superkill="killall -s SIGKILL"
-alias ssh="TERM=xterm-256color ssh"
+alias ssh="TERM=uxterm-256color ssh"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

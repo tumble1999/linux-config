@@ -1,5 +1,8 @@
 [user]
 	email = tumble1999@users.noreply.github.com
 	name = Tumble
+	signingkey = /home/tumble/.ssh/github.pub
+[gpg]
+	format = ssh
 [commit]
 	gpgsign = true

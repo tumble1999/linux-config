@@ -1,8 +1,8 @@
 [Auto Allow]
-kdewallet=kwalletmanager5
+kdewallet=kwalletmanager5,discord
 
 [Auto Deny]
-kdewallet=Code - OSS
+kdewallet=Code - OSS,Chromium,Opera
 
 [Wallet]
 Close When Idle=false

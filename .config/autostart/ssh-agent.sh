@@ -1,1 +1,0 @@
- ssh-agent -a $XDG_RUNTIME_DIR/ssh-agent keepassxc
